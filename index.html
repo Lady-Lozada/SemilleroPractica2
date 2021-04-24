@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <title>Practica JavaScript</title>
+</head>
+<body>
+    <header>
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="#init" class="active">Inicio</a></li>
+                <li><a href="calc.html">Calculadora</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="init" class="form">
+            <form action="/js/form.js" method="post" class="required" id="form">
+                    <div class="row">
+                        <label for="numId" >Número de identificación<span style="color:red">&nbsp;*</span></label><br>
+                        <input type="text" id="num" name="numId" required placeholder="Número de identificación" 
+                                onkeyup="this.value=valExpReg(this.value,1)">
+                        <small></small>
+                    </div>
+                    <div class="row">
+                        <label for="name" >Nombres y Apellidos<span style="color:red">&nbsp;*</span></label><br>
+                        <input type="text" id="name" name="names" required placeholder="Nombres y Apellidos"
+                                onkeyup="this.value=valExpReg(this.value,2)">
+                        <small></small>
+                    </div>
+                    <div class="row">
+                        <label for="cel" >Celular<span style="color:red">&nbsp;*</span></label><br>
+                        <input type="text" id="celular" name="cel" required placeholder="Ingrese solo números"
+                                onkeyup="this.value=valExpReg(this.value,1)">
+                        <small></small>
+                    </div>
+                    <div class="row">
+                        <label for="email" >Email<span style="color:red">&nbsp;*</span></label><br>
+                        <input type="email" id="email" name="email" required placeholder="Email"
+                                onkeyup="this.value=valExpReg(this.value,3)">
+                        <small></small>
+                    </div>
+                    <div class="row">
+                        <label for="area" >Área/operación<span style="color:red">&nbsp;*</span></label><br>
+                        <input type="text" id="area" name="area" required placeholder="Área/operación"
+                                onkeyup="this.value=valExpReg(this.value,3)">
+                        <small></small>
+                    </div>
+                    <div class="row">
+                        <label for="cargo" >Cargo<span style="color:red">&nbsp;*</span></label><br>
+                        <input type="text" id="cargo" name="cargo" required placeholder="Cargo"
+                                onkeyup="this.value=valExpReg(this.value,3)">
+                        <small></small>
+                    </div>
+                    <div class="row">
+                        <label for="contac" >Si necesitamos contactarte teléfonicamente, indícanos donde te encuentras?
+                            <span style="color:red">&nbsp;*</span>
+                        </label><br>
+                        <select class="ciudad" id="idCiudad" name="ciudad" >
+                            <option value="0" disabled selected>Indícanos donde te encuentras?</option> 
+                            <option value="Medellín">Medellín</option> 
+                            <option value="Bógota">Bógota</option> 
+                            <option value="Cali">Cali</option>
+                            <option value="Cartágena">Cartágena</option> 
+                            <option value="Santa Marta">Santa Marta</option>
+                            <option value="Pereira">Pereira</option>
+                            <option value="Manizales">Manizales</option>
+                        </select><br>
+                        <small></small>
+                    </div>
+                    <div class="row">
+                        <label for="dia" >Indícanos que día te podemos contactar?
+                            <span style="color:red">&nbsp;*</span>
+                        </label><br>
+                        <select class="dia" id="idDia" name="dia" >
+                            <option value="0" disabled selected>Indícanos que día te podemos contactar?</option> 
+                            <option value="Medellín">Lunes</option> 
+                            <option value="Bógota">Martes</option> 
+                            <option value="Cali">Miercoles</option>
+                            <option value="Cartágena">Jueves</option> 
+                            <option value="Santa Marta">Viernes</option>
+                        </select><br>
+                        <small></small>
+                    </div>
+                    <div></div>
+                    <div class="row">
+                        <label for="hour" >Horario en el que te podemos contactar.<span style="color:red">&nbsp;*</span></label><br>
+                        <input type="time" id="idHour" name="hour" value="07:00:00"  required>
+                        <i class="fas fa-check-circle"></i>
+                        <small></small>
+                    </div>
+                    
+                    <div class="boton-env">
+                        <button type="submit" class="env">Enviar</button>
+                        
+                    </div>
+                    <div class="boton-res">
+                        <button type="reset" class="res" >Borrar</button>
+                    </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="js/form.js"></script>
+</body>
+</html>

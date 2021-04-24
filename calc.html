@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Practica JavaScript</title>
+</head>
+<body>
+    <header>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#calc" class="active">Calculadora</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="calc" class="form">
+            <form action="" class="input-calc">
+                <div class="entry">
+                    <div>
+                        <label for="num" >Número 1:</label><br>
+                        <input type="text" id="num1" required placeholder="Ingrese número 1"
+                            onkeyup="this.value=validate(this.value)" min="1" max="16">
+                        <span for="" id="symbol" class="symb" >&nbsp;?</span>
+                    </div>
+                    <div>
+                        <label for="celular" >Número 2:</label><br>
+                        <input type="text" id="num2" required placeholder="Ingrese número 2"
+                            onkeyup="this.value=validate(this.value)" min="1" max="16">
+                        <span for="" class="symb" >&nbsp;=</span>
+                    </div>
+                    <div>
+                        <label for="celular" >Resultado:</label><br>
+                        <span for="" id="result" class="result">&nbsp;0</span>
+                    </div>
+                </div>
+                <span for="" id="val" class="val" >&nbsp;</span>
+                <div class="oper">
+                    <label for="celular" >Operación básica!</label><br>
+                    <button type="button" class="adicion" onclick="oper(1)">+</button>
+                    <button type="button" class="sustraccion" onclick="oper(2)">-</button>
+                    <button type="button" class="multiplicacion" onclick="oper(3)">*</button>
+                    <button type="button" class="division" onclick="oper(4)">/</button>
+                    <button type="reset" class="limpiar" onclick="limpiar(0)">C</button>
+                </div>
+                <div class="oper">
+                    <label for="celular" >Otras operaciones!</label><br>
+                    <button type="button" class="potCua" onclick="oper(5)">x&#9643;</button>
+                    <button type="button" class="potCub" onclick="oper(6)">&#60;</button>
+                    <button type="button" class="raizCua" onclick="oper(7)">&#62;</button>
+                    <button type="button" class="raizCua" onclick="oper(8)">mod</button>
+                    <button type="button" class="porcentaje" onclick="oper(9)">&nbsp;</button>
+                </div>
+            </form>
+            <div class="rule">
+                <h4>Reglas</h4>
+                <p>
+                    Esta es una calculadora que recibe 2 números.<br>
+                    ?: Cambia cuando se selecciona una operación.<br>
+                    C: Limpia o resetea la pantalla.<br>
+                    x&#9643;: Elevar a una potencia.<br>
+                    &#60; : Menor que.<br>
+                    &#62; : Mayor que.<br>
+                    mod = &#37;: Resto de la división.<br>
+                    <br>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="js/calc.js"></script>
+</body>
+</html>

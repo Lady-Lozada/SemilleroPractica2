@@ -1,0 +1,310 @@
+body, html{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ********************* */
+/* Menú */
+header{
+    margin: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #2d435b;
+}
+
+.menu{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 7vh;
+}
+
+.menu ul li{
+    margin-right: 15px;
+}
+
+.menu ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffc234;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menu ul li a.active{
+    color: #2d435b;
+    background-color: #ffc234;
+    height: 7vh;
+}
+
+/* ********************* */
+/* Formulario */
+main{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-business-atmosphere-geometry-corporate-promotion-ppt-background-image_259457.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+main .form{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.form .required{
+    width: 85%;
+    height: 65vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 9vh);
+}
+
+.form .required div{
+    width: 95%;
+    margin-top: 3px;
+    height: 10vh;
+}
+
+.form .required .row input,
+.form .required .row .ciudad,
+.form .required .row .dia{
+    width: 100%;
+    height: 3vh;
+    border: 0.5px solid #2d435b;
+    outline: none;
+    border-radius: 3px;
+}
+
+.form .required .row input:hover,
+.row div .ciudad:hover{
+    cursor: pointer;
+}
+.form .required .row input:focus, .row div .ciudad:focus{
+    border: 1px solid #ffc234;
+}
+.required .boton:nth-child(1){
+    width: 100%;
+    height: 5vh;
+    display: block;
+}
+
+.required div button{
+    width: 30%;
+    height: 4vh;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    outline: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #6385A8;
+    color: #ffc234;
+}
+.required .boton-env button{
+    float: right;
+}
+.required .boton-res button{
+    float: left;
+}
+.required button:hover{
+    color: #2d435b;
+    background-color: #ffc234;
+}
+
+/* ********************* */
+/* Calculadora */
+
+.form .input-calc{
+    width: 60%;
+    height: 45vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.form .input-calc span.val, 
+.form span.val{
+    width: 90%;
+    color: red;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0 0 10px 15px;
+}
+
+.form .input-calc .entry{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+.form .input-calc .entry div{
+    margin: 10px;
+}
+
+.form .input-calc .entry div:nth-child(1),
+.form .input-calc .entry div:nth-child(2){
+    width: 28%;
+    margin-right: 0;
+}
+
+.form .input-calc .entry div:nth-child(3) {
+    width: 30%;
+}
+
+.form .input-calc .entry div .symb{
+    padding: 0;
+    padding-top: 5px;
+}
+
+.form .input-calc .entry div:nth-child(1) input,
+.form .input-calc .entry div:nth-child(2) input{
+    width: 74%;
+}
+
+.form .input-calc .entry div input{
+    width: 100%;
+    height: 3vh;
+    outline: none;
+}
+.form .input-calc .entry div input:hover{
+    border: 1px solid #ffc234;
+    outline: none;
+}
+
+.form .input-calc .oper{
+    margin: 5px;
+}
+.form .input-calc .oper button{
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    outline: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #6385A8;
+    color: #ffc234;
+}
+
+.form .input-calc .oper button:hover{
+    color: #2d435b;
+    background-color: #ffc234;
+}
+
+.form .rule{
+    border-top: 5px solid #ffc234;
+    color: #2d435b;
+    width: 55%;
+    text-align: right;
+}
+.form .rule p{
+    margin: 0px;
+    font-size: 1rem;
+}
+.form .rule h4{
+    font-size: 1.2rem;
+    margin: 0px;
+    margin-top: 5px;
+    padding: 0px;
+}
+
+
+/* ----- Validaciones ----- */
+
+.form .required .row.success input,
+.form .required .row.success .ciudad,
+.form .required .row.success .dia {
+	border-color: #2ecc71;
+}
+
+.form .required .row.error input,
+.form .required .row.error .ciudad,
+.form .required .row.error .dia {
+	border-color: #e74c3c;
+}
+
+.form .required .row i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form .required .row.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form .required .row small {
+	color: #e74c3c;
+	visibility: hidden;
+    font-size: 12px;
+}
+
+.form .required .row.error small {
+	visibility: visible;
+}
+
+/* ----- Responsive ----- */
+
+@media (max-width: 1080px){
+
+    /* ----- formulario ----- */
+    .form .required{
+        grid-template-rows: repeat(6, 11vh);
+    }
+
+}
+
+@media (max-width: 768px){
+
+    /* ----- formulario ----- */
+    main .form{
+        font-size: 1rem;
+    }
+
+    /* ----- Calculadora ----- */
+    .form .input-calc{
+        width: 75%;
+    }
+
+    .form .rule{
+        width: 70%;
+    }
+
+    .required div button{
+        width: 50%;
+        font-size: 1.1rem;
+    }
+}
