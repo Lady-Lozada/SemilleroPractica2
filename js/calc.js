@@ -124,6 +124,18 @@ function limpiar(){
 function validate(string){
     var out = '';
     var filtro = '1234567890.';
+    var input1 =  document.querySelector('#num1');
+    var input2 =  document.querySelector('#num2');
+
+    input1.addEventListener('input',function(){
+    if (this.value.length > 15) 
+        this.value = this.value.slice(0,15); 
+    })
+
+    input2.addEventListener('input',function(){
+    if (this.value.length > 15) 
+        this.value = this.value.slice(0,15); 
+    })
 
     for (var i=0; i<string.length; i++){
         if ((filtro.indexOf(string.charAt(i)) != -1)){
