@@ -254,6 +254,12 @@ main .form{
 	border-color: #e74c3c;
 }
 
+.form .required .row.clean input,
+.form .required .row.clean .ciudad,
+.form .required .row.clean .dia {
+	border-color: none;
+}
+
 .form .required .row i {
 	visibility: hidden;
 	position: absolute;

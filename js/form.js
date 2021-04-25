@@ -1,11 +1,11 @@
 function textExpReg(numReg){
-    console.log("textExpReg: "+ typeof(numReg) + ": "+ numReg);
     switch (numReg) {
         case 1: return '1234567890';
         case 2: return 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ';
         case 3: return 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890@. ';
     }
 }
+
 function valExpReg(string, numReg){
     var out = '';
     var filtro = textExpReg(Number(numReg));
@@ -49,7 +49,6 @@ function valInputs() {
 	const emailValue = email.value.trim();
 	const cargoValue = cargo.value.trim();
 	
-
     if(idValue === '') {
 		errorInput(idNum, 'No puede dejar el número de documento en blanco');
 	}else if(!expReg.numeric.test(idValue)){
@@ -104,18 +103,15 @@ function valInputs() {
 		successInput(cargo);
 	}
 
-    var fa = new Date();
-    var fcadInp = fa.getFullYear() + "/" + fa.getMonth() + "/" + fa.getDay();
-    var temp = new Date(fcadInp + " " + hour.value + ":00");
-    var min = new Date(fcadInp + " " + "07:00:00");
-    var max = new Date(fcadInp + " " +"18:00:00");
+    var fec = "2021/01/01";
+    var temp = new Date(fec + " "+ hour.value + ":00");
+    var min = new Date(fec + " "+"07:00:00");
+    var max = new Date(fec + " "+"18:00:00");
 
     if  ((temp >= min) && (temp <= max)) {
         successInput(hour);
-        console.log("linea 131 "+ hour.value);
 	} else {
 		errorInput(hour, 'Debe seleccionar una hora entre: 07:00am y 06:00 pm');
-        console.log("linea 134 "+ hour);
 	}
 
     if(dia.value == "0") {
@@ -123,6 +119,10 @@ function valInputs() {
 	}else {
 		successInput(dia);
 	}
+}
+
+function isEmail(mail) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(mail);
 }
 
 function successInput(input) {
@@ -137,6 +137,19 @@ function errorInput(input, message) {
 	small.innerText = message;
 }
 
-function isEmail(mail) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(mail);
+function cleanInput() {
+        fnCleanInput(idNum);
+        fnCleanInput(cel);
+        fnCleanInput(area);
+        fnCleanInput(ciudad);
+        fnCleanInput(names);
+        fnCleanInput(email);
+        fnCleanInput(cargo);
+        fnCleanInput(dia);
+        fnCleanInput(hour);
+}
+
+function fnCleanInput(elemento){
+    const formControl = elemento.parentElement;
+    formControl.className = 'row clean';
 }

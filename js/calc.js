@@ -26,7 +26,9 @@ function oper(ope){
                 multiplicacion(num1, num2);
                 break;
             case 4:
-                division(num1, num2);
+                num2 == 0 ? (limpiar(),
+                document.getElementById("val").innerHTML = "La división por cero no es permitida"
+                ) : (division(num1, num2));
                 break;
             case 5:
                 potencia(num1, num2);
@@ -72,6 +74,7 @@ function division(x, y){
     let val = valResult(result);
     operacion('&nbsp;&#47');
     document.getElementById("result").innerHTML = val;
+    
 }
 
 function potencia(x, y){
